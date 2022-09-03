@@ -10,9 +10,9 @@ const webpHtml = require('gulp-webp-html');
 
 const html = () =>
   src(path.html.src)
-    .pipe(plumber(plumber({
+    .pipe(plumber({
         errorHandler: notify.onError()
-    })))
+    }))
     .pipe(fileInclude())
     .pipe(webpHtml())
     .pipe(htmlmin(app.htmlmin))

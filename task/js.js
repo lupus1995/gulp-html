@@ -7,9 +7,9 @@ const babel = require('gulp-babel')
 
 const js = () =>
   src(path.js.src, { sourcemaps: true })
-    .pipe(plumber(plumber({
+    .pipe(plumber({
         errorHandler: notify.onError()
-    })))
+    }))
     .pipe(babel())
     .pipe(dest(path.js.dest))
 

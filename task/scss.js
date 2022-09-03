@@ -8,9 +8,9 @@ const sass = require('gulp-sass')(require('sass'));
 
 const scss = () =>
   src(path.scss.src, { sourcemaps: true })
-    .pipe(plumber(plumber({
+    .pipe(plumber({
         errorHandler: notify.onError()
-    })))
+    }))
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(dest(path.scss.dest))

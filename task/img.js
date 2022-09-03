@@ -10,9 +10,9 @@ const webp = require('gulp-webp');
 
 const img = () =>
   src(path.img.src)
-    .pipe(plumber(plumber({
+    .pipe(plumber({
         errorHandler: notify.onError()
-    })))
+    }))
     .pipe(newer(path.img.dest))
     .pipe(webp())
     .pipe(dest(path.img.dest))

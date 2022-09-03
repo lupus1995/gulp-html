@@ -10,9 +10,9 @@ const ttf2woff2 = require('gulp-ttf2woff2');
 
 const font = () =>
   src(path.font.src)
-    .pipe(plumber(plumber({
+    .pipe(plumber({
         errorHandler: notify.onError()
-    })))
+    }))
     .pipe(newer(path.font.dest))
     .pipe(fonter(app.fonter))
     .pipe(dest(path.font.dest))

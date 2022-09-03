@@ -3,6 +3,7 @@ const browserSync = require('browser-sync').create();
 
 const path = require('./config/path.js');
 
+// задачи
 const clear = require('./task/clear.js');
 const html = require('./task/html.js');
 const scss = require('./task/scss.js');
@@ -10,6 +11,7 @@ const js = require('./task/js.js');
 const img = require('./task/img.js');
 const font = require('./task/font.js')
 
+// сервер для разработки
 const server = () => {
     browserSync.init({
         server: {
@@ -18,6 +20,7 @@ const server = () => {
     });
 }
 
+// наблюдатели за файлами
 const watcher = () => {
     watch(path.html.watch, html).on('all', browserSync.reload);
     watch(path.scss.watch, scss).on('all', browserSync.reload);
@@ -26,6 +29,7 @@ const watcher = () => {
     watch(path.font.watch, font).on('all', browserSync.reload);
 };
 
+// экспортируемые команды, чтобы их можно было запустить в задаче dev
 exports.html = html;
 exports.watcher = watcher;
 exports.clear = clear;
@@ -34,6 +38,7 @@ exports.js= js;
 exports.img = img;
 exports.font = font;
 
+// команда запуска gulp
 exports.dev = series(
     clear,
     parallel(html, scss, js, img, font),
