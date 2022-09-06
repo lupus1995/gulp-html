@@ -8,7 +8,7 @@ const clear = require('./task/clear.js');
 const html = require('./task/html.js');
 const scss = require('./task/scss.js');
 const js = require('./task/js.js');
-const img = require('./task/img.js');
+const { img, cropImage } = require('./task/img.js');
 const font = require('./task/font.js')
 
 // сервер для разработки
@@ -37,9 +37,11 @@ exports.scss = scss;
 exports.js= js;
 exports.img = img;
 exports.font = font;
+exports.cropImage = cropImage;
 
 // команда запуска gulp
 exports.dev = series(
     clear,
+    cropImage,
     parallel(html, scss, js, img, font),
     parallel(watcher, server));
