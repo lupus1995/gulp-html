@@ -26,6 +26,8 @@ module.exports = {
     },
     img: {
         src: `${pathSrc}/img/**/*.{png,jpg,jpeg,gif,svg}`,
+        srcBackgroundBlock: `${pathSrc}/img/backgroundBlock/**/*.{png,jpg,jpeg,gif,svg}`,
+        srcThumbnails: `${pathSrc}/img/thumbnails/**/*.{png,jpg,jpeg,gif,svg}`,
         watch: `${pathSrc}/img/**/*.{png,jpg,jpeg,gif,svg}`,
         dest: `${pathDest}/img`,
     },
