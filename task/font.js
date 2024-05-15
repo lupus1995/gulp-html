@@ -5,7 +5,7 @@ const path = require('../config/path.js');
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 const newer = require('gulp-newer');
-const fonter = require('gulp-fonter');
+const fonter = require('gulp-fonter-2');
 const ttf2woff2 = require('gulp-ttf2woff2');
 
 const inline = require('gulp-inline-fonts');

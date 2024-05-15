@@ -48,6 +48,8 @@
     "through2": "^4.0.2"
   },
   "dependencies": {
-    "gulp-cli": "^2.3.0"
+    "gulp-cli": "^2.3.0",
+    "gulp-fonter-2": "^0.3.0",
+    "sharp": "^0.33.3"
   }
 }
